@@ -4,11 +4,12 @@
 <?import javafx.scene.SubScene?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="597.0" prefWidth="889.0" style="-fx-background-color: #BD658A; -fx-border-color: #201E1F;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modules.AccueilController">
    <children>
@@ -17,26 +18,32 @@
           <Region />
         </root>
       </SubScene>
-      <Label layoutX="104.0" layoutY="84.0" text="Recensement des offres de Stage GPhy">
+      <Label layoutX="115.0" layoutY="129.0" text="Recensement des offres de Stage GPhy">
          <font>
             <Font size="41.0" />
          </font>
       </Label>
       <Pane layoutX="19.0" layoutY="230.0" prefHeight="37.0" prefWidth="851.0" style="-fx-background-color: #BD658A; -fx-border-color: #201E1F;">
          <children>
-            <Button layoutX="166.0" layoutY="-12.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Offres de stage">
+            <Button layoutX="166.0" layoutY="-12.0" mnemonicParsing="false" onAction="#goToStage" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Offres de stage">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="480.0" layoutY="-13.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Nos informations">
+            <Button layoutX="480.0" layoutY="-13.0" mnemonicParsing="false" onAction="#goToNosInfos" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Nos informations">
                <font>
                   <Font name="Baskerville Old Face" size="18.0" />
                </font>
             </Button>
          </children>
       </Pane>
-      <Label layoutX="149.0" layoutY="356.0" prefHeight="176.0" prefWidth="452.0" text="Accueil" />
+      <Label alignment="TOP_CENTER" layoutX="242.0" layoutY="345.0" prefHeight="176.0" prefWidth="452.0" text="Bonjour à tous" />
+      <ImageView fitHeight="79.0" fitWidth="115.0" layoutX="741.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Vie%20GPhy/logo%20univ/univ.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="home" layoutX="31.0" layoutY="36.0" mnemonicParsing="false" onAction="#goHome" text="HOME" />
    </children>
    <styleClass>
       <String fx:value="#FF5733" />

@@ -1,4 +1,4 @@
-package Modules;
+package Modules.Accueil;
 
 public class AccueilModel {
 }
