@@ -19,10 +19,9 @@ public class Main extends Application {
         AccueilController = new AccueilController(this);
         StageController = new StageController(this);
 
-
+    }
     @Override
-    public void start(Stage primaryStage)
-        {
+    public void start(Stage primaryStage) {
         primaryStage.setTitle(" TITRE FENETRE ");
         primaryStage.setOnCloseRequest(e -> Platform.exit());
         primaryStage.setScene(new Scene(new Label(" HELLO WORLD "), 1280, 720));
