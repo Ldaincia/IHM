@@ -18,10 +18,9 @@ public class AccueilController {
         main = newMain;
     }
 
-
-    public void butt() throws IOException, SQLException {
-        main.tools.goHome(home);
-    }
+//    public void goHome() throws IOException, SQLException {
+//        main.tools.goHome(home);
+//    }
 
     public void goToStage(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();

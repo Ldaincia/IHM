@@ -41,6 +41,10 @@ public class Main extends Application {
     }
 
 
+
+
+
+    // TOUS NOS GETTERS
     public AccueilController getAccueilController() {
         return accueilController;
     }

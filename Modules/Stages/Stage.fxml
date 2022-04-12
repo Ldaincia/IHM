@@ -9,7 +9,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="610.0" prefWidth="887.0" style="-fx-background-color: #BD658A;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modules.Stages.Stage">
    <children>
       <SubScene height="563.0" layoutX="15.0" layoutY="26.0" style="-fx-effect: #201E1F;" width="851.0">
@@ -17,14 +16,14 @@
             <Region />
          </root>
       </SubScene>
-      <Label layoutX="248.0" layoutY="45.0" text="Offres de Stage GPhy">
+      <Label layoutX="248.0" layoutY="45.0" text="Offres de stages">
          <font>
             <Font size="41.0" />
          </font>
       </Label>
       <Pane layoutX="15.0" layoutY="127.0" prefHeight="37.0" prefWidth="851.0" style="-fx-background-color: #BD658A; -fx-border-color: #201E1F;">
          <children>
-            <Button layoutX="161.0" layoutY="-12.0" mnemonicParsing="false" onAction="#goToStage" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Offres de stage">
+            <Button layoutX="161.0" layoutY="-12.0" mnemonicParsing="false" onAction="#goAccueil" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Accueil">
                <font>
                   <Font size="18.0" />
                </font>
@@ -37,5 +36,10 @@
          </children>
       </Pane>
       <Line endX="100.0" startX="-100.0" />
+      <Button layoutX="322.0" layoutY="497.0" mnemonicParsing="false" onAction="#goToAjout" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Ajouter un stage">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
