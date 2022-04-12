@@ -9,12 +9,12 @@ public class InfosController {
     private Main main;
     @FXML private Button home;
 
-//    public NosInfosController(Main newMain){
-//        main = newMain;
-//    }
+    public InfosController(Main newMain){
+        main = newMain;
+    }
+
 //
-//
-//    public void butt() throws IOException, SQLException {
+//    public void goHome() throws IOException, SQLException {
 //        main.tools.goHome(home);
 //    }
 //

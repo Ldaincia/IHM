@@ -1,23 +1,33 @@
 package GPhyStages;
 
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 import Modules.Accueil.AccueilController;
 import Modules.Stages.StageController;
+import Modules.NosInfos.InfosController;
+import Modules.Stages.AjoutStage.NouveauStageController;
 import javafx.application.Application;
 import javafx.scene.control.Label;
 import javafx.application.Platform;
-import javafx.scene.Scene;
+
 
 public class Main extends Application {
 
     private AccueilController accueilController;
     private StageController stageController;
     private InfosController infosController;
+    private NouveauStageController nouveauStageController;
     public Tools tools;
 
     @Override
     public void init() {
-        AccueilController = new AccueilController(this);
-        StageController = new StageController(this);
+        accueilController = new AccueilController(this);
+        stageController = new StageController(this);
+        infosController = new InfosController(this);
+        nouveauStageController = new NouveauStageController(this);
+
+
 
     }
     @Override
@@ -28,10 +38,29 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+
     public AccueilController getAccueilController() {
         return accueilController;
     }
-;
+
+
+    public StageController getStageController() {
+        return stageController;
+    }
+
+
+    public NouveauStageController getNouveauStageController() {
+        return nouveauStageController;
+    }
+
+
+    public InfosController getInfosController() {
+        return infosController;
+    }
+
+
+
+
 }
 
 
