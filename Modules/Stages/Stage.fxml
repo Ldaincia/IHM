@@ -2,14 +2,21 @@
 
 <?import javafx.scene.SubScene?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="610.0" prefWidth="887.0" style="-fx-background-color: #BD658A;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modules.Stages.Stage">
+<AnchorPane prefHeight="610.0" prefWidth="887.0" style="-fx-background-color: #BD658A;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modules.Stages.Stage">
    <children>
       <SubScene height="563.0" layoutX="15.0" layoutY="26.0" style="-fx-effect: #201E1F;" width="851.0">
          <root>
@@ -36,10 +43,69 @@
          </children>
       </Pane>
       <Line endX="100.0" startX="-100.0" />
-      <Button layoutX="322.0" layoutY="497.0" mnemonicParsing="false" onAction="#goToAjout" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Ajouter un stage">
+      <Button layoutX="345.0" layoutY="539.0" mnemonicParsing="false" onAction="#goToAjout" prefHeight="38.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Ajouter un stage">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
+      <SplitPane dividerPositions="0.5" layoutX="27.0" layoutY="186.0" prefHeight="345.0" prefWidth="826.0">
+         <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="296.0" prefWidth="750.0">
+               <children>
+                  <TableView layoutX="7.0" layoutY="3.0" prefHeight="336.0" prefWidth="399.0">
+                    <columns>
+                      <TableColumn prefWidth="60.80002307891846" text="Structure" />
+                      <TableColumn prefWidth="95.99996566772461" text="Sujet" />
+                        <TableColumn prefWidth="69.59996032714844" text="Lieu" />
+                        <TableColumn prefWidth="61.59999084472656" text="Durée" />
+                        <TableColumn prefWidth="56.800048828125" text="Début" />
+                        <TableColumn prefWidth="54.4000244140625" text="Promo" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ButtonBar layoutX="66.0" layoutY="290.0" prefHeight="40.0" prefWidth="284.0">
+                    <buttons>
+                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="142.0" text="MODIFIER OFFRE" />
+                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="142.0" text="SUPPRIMER OFFRE" />
+                    </buttons>
+                  </ButtonBar>
+                  <GridPane layoutX="14.0" layoutY="14.0" prefHeight="226.0" prefWidth="388.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Structure :" />
+                        <Label text="Sujet de Stage :" GridPane.rowIndex="1" />
+                        <Label text="Intitulé de Stage :" GridPane.rowIndex="2" />
+                        <Label text="Lieu :" GridPane.rowIndex="3" />
+                        <Label text="Durée :" GridPane.rowIndex="4" />
+                        <Label text="Début :" GridPane.rowIndex="5" />
+                        <Label text="Promotion :" GridPane.rowIndex="6" />
+                        <Label text="Label" GridPane.columnIndex="1" />
+                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
    </children>
 </AnchorPane>
