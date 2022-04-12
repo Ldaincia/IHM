@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -46,7 +45,6 @@ public class Tools {
         public void goHome(Button button) throws IOException, SQLException {
             Stage stage = (Stage) button.getScene().getWindow();
             switchScene(stage, "Accueil/Accueil.fxml", main.getAccueilController());
-            main.getAccueilController().updateMenu();
         }
 
 
