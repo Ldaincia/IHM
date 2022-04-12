@@ -4,16 +4,20 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
 import java.net.URL;
 import java.net.URLConnection;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
 
 public class Tools {
 
@@ -41,8 +45,8 @@ public class Tools {
 
         public void goHome(Button button) throws IOException, SQLException {
             Stage stage = (Stage) button.getScene().getWindow();
-            switchScene(stage, "Menu/Menu.fxml", main.getMenuController());
-            main.getMenuController().updateMenu();
+            switchScene(stage, "Accueil/Accueil.fxml", main.getAccueilController());
+            main.getAccueilController().updateMenu();
         }
 
 
@@ -67,46 +71,5 @@ public class Tools {
                 }
             }
             return textTransform;
-        }
-
-        public ArrayList<JSONObject> splitResultQuery(String objectToSplit) {
-
-            ArrayList<JSONObject> jsonList = new ArrayList<JSONObject>();
-            int pos1 = 0;
-            int pos2 = 0;
-            for (int i = 0; i < objectToSplit.length(); i++) {
-
-                JSONObject newJsonObject = null;
-
-                if (objectToSplit.charAt(i) == '{') {
-                    pos1 = i;
-                } else if (objectToSplit.charAt(i) == '}') {
-                    pos2 = i + 1;
-                    newJsonObject = new JSONObject(objectToSplit.substring(pos1, pos2));
-                    jsonList.add(newJsonObject);
-                }
-            }
-
-
-            return jsonList;
-        }
-
-
-        public ArrayList<JSONObject> sendRequest(String request) throws IOException {
-            ArrayList<JSONObject> listOfResults = null;
-
-            URL url = new URL(request);
-            URLConnection conn = url.openConnection();
-
-            BufferedReader in = new BufferedReader(new InputStreamReader(
-                    conn.getInputStream()));
-            String inputLine;
-
-            while ((inputLine = in.readLine()) != null) {
-                String output = inputLine.replace("[", "").replace("]", "");
-                ;
-                listOfResults = splitResultQuery(output);
-            }
-            return listOfResults;
         }
 }

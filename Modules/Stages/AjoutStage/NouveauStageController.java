@@ -23,14 +23,13 @@ public class NouveauStageController {
         main.tools.goHome(home);
     }
 
-    public void goToStage(ActionEvent e) throws IOException {
+    public void goHome(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminOrgan.fxml", main.getAdminOrganController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), " ", main.getAccueilController());
     }
 
     public void goToNosInfos(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminOrgan.fxml", main.getAdminOrganController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "NosInfos/NosInfos.fxml", main.getInfosController());
     }
-
 }
