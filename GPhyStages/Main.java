@@ -31,7 +31,7 @@ public class Main extends Application {
     public AccueilController getAccueilController() {
         return accueilController;
     }
-
+;
 }
 
 
