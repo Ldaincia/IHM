@@ -1,4 +1,4 @@
-package Modules.Stages;
+package Modules.Stages.AjoutStage;
 
 import GPhyStages.Main;
 import javafx.event.ActionEvent;
@@ -9,12 +9,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class StageController {
+public class NouveauStageController {
 
     private Main main;
     @FXML private Button home;
 
-    public StageController(Main newMain){
+    public NouveauStageController(Main newMain){
         main = newMain;
     }
 
@@ -25,12 +25,12 @@ public class StageController {
 
     public void goToStage(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Stages/Stage.fxml", main.getAdminOrganController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminOrgan.fxml", main.getAdminOrganController());
     }
 
     public void goToNosInfos(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Stages/Stage.fxmll", main.getAdminOrganController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminOrgan.fxml", main.getAdminOrganController());
     }
 
 }
