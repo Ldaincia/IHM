@@ -18,4 +18,5 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(new Label(" HELLO WORLD "), 1280, 720));
         primaryStage.show();
     }
+
 }
