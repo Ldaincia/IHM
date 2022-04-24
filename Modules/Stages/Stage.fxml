@@ -16,7 +16,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="610.0" prefWidth="887.0" style="-fx-background-color: #BD658A;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modules.Stages.Stage">
+<AnchorPane prefHeight="610.0" prefWidth="887.0" style="-fx-background-color: #BD658A;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modules.Stages.StageController">
    <children>
       <SubScene height="563.0" layoutX="15.0" layoutY="26.0" style="-fx-effect: #201E1F;" width="851.0">
          <root>
@@ -52,14 +52,14 @@
          <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="296.0" prefWidth="750.0">
                <children>
-                  <TableView layoutX="7.0" layoutY="3.0" prefHeight="336.0" prefWidth="399.0">
+                  <TableView fx:id="tableStage" layoutX="7.0" layoutY="3.0" prefHeight="336.0" prefWidth="399.0">
                     <columns>
-                      <TableColumn prefWidth="60.80002307891846" text="Structure" />
-                      <TableColumn prefWidth="95.99996566772461" text="Sujet" />
-                        <TableColumn prefWidth="69.59996032714844" text="Lieu" />
-                        <TableColumn prefWidth="61.59999084472656" text="Durée" />
-                        <TableColumn prefWidth="56.800048828125" text="Début" />
-                        <TableColumn prefWidth="54.4000244140625" text="Promo" />
+                      <TableColumn fx:id="nom_structureColonne" prefWidth="60.80002307891846" text="Structure" />
+                      <TableColumn fx:id="sujetColonne" prefWidth="95.99996566772461" text="Sujet" />
+                        <TableColumn fx:id="lieuColonne" prefWidth="69.59996032714844" text="Lieu" />
+                        <TableColumn fx:id="dureeColonne" prefWidth="61.59999084472656" text="Durée" />
+                        <TableColumn fx:id="mois_debutColonne" prefWidth="56.800048828125" text="Début" />
+                        <TableColumn fx:id="promotion_etuColonne" prefWidth="54.4000244140625" text="Promo" />
                     </columns>
                   </TableView>
                </children>
@@ -94,13 +94,13 @@
                         <Label text="Durée :" GridPane.rowIndex="4" />
                         <Label text="Début :" GridPane.rowIndex="5" />
                         <Label text="Promotion :" GridPane.rowIndex="6" />
-                        <Label text="Label" GridPane.columnIndex="1" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label fx:id="nom_structureLabel" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="sujetLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="intituleLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="lieuLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="dureeLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="mois_debutLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="promotion_etuLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                      </children>
                   </GridPane>
                </children>

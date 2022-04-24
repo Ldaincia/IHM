@@ -18,7 +18,7 @@ public class NouveauStageController {
         main = newMain;
     }
 
-
+/*
     public void butt() throws IOException, SQLException {
         main.tools.goHome(home);
     }
@@ -32,4 +32,6 @@ public class NouveauStageController {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "NosInfos/NosInfos.fxml", main.getInfosController());
     }
+
+ */
 }

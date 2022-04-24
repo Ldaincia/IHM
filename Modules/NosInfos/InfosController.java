@@ -19,6 +19,7 @@ public class InfosController {
         main = newMain;
     }
 
+    /*
     public void goAccueil(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Accueil/Accueil.fxml", main.getAccueilController());
@@ -28,6 +29,6 @@ public class InfosController {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "NosInfos/NosInfos.fxml", main.getInfosController());
     }
-
+    */
 
 }

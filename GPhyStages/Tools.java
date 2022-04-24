@@ -41,11 +41,12 @@ public class Tools {
             stage.show();
         }
 
-
+        /*
         public void goHome(Button button) throws IOException, SQLException {
             Stage stage = (Stage) button.getScene().getWindow();
             switchScene(stage, "Accueil/Accueil.fxml", main.getAccueilController());
         }
+        */
 
 
         public static String spaceToUnderscore(String textToTransform) {
