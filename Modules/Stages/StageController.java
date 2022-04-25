@@ -20,19 +20,19 @@ import java.sql.SQLException;
 public class StageController {
 
     @FXML
-    private TableView<Stage> tableStage;
+    private TableView<NotreClasseStage> tableStage;
     @FXML
-    private TableColumn<Stage, String> nom_structureColonne;
+    private TableColumn<NotreClasseStage, String> nom_structureColonne;
     @FXML
-    private TableColumn<Stage, String> sujetColonne;
+    private TableColumn<NotreClasseStage, String> sujetColonne;
     @FXML
-    private TableColumn<Stage, String> lieuColonne;
+    private TableColumn<NotreClasseStage, String> lieuColonne;
     @FXML
-    private TableColumn<Stage, Integer> dureeColonne;
+    private TableColumn<NotreClasseStage, Integer> dureeColonne;
     @FXML
-    private TableColumn<Stage, String> mois_debutColonne;
+    private TableColumn<NotreClasseStage, String> mois_debutColonne;
     @FXML
-    private TableColumn<Stage, String> promotion_etuColonne;
+    private TableColumn<NotreClasseStage, String> promotion_etuColonne;
 
     @FXML
     private Label nom_structureLabel;

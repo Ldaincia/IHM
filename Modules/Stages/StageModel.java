@@ -17,17 +17,15 @@ public class StageModel {
     }
 
     /**
-     * Permet de faire la requête des données pré-opératoires dans la BDD et de l'ajouter dans la ListView
+     * Permet de faire la requête des données de Stages dans la BDD et de l'ajouter dans la ListView
      * @param theListView
      */
 
-    /*
-    public void addItemList(ListView theListView) throws IOException {
+//    public void addItemList(ListView theListView) throws IOException {
+//
+//        theListView.getItems().add(new Stage(i.getInt("ID_PREOP"), Tools.underscoreToSpace(i.getString("NOM_PREOP"))));
+//    }
 
-        theListView.getItems().add(new Stages(i.getInt("ID_PREOP"), Tools.underscoreToSpace(i.getString("NOM_PREOP"))));
-    }
-
-    */
 
     /**
      * Permet d'envoyer la requête de suppression et de retirer l'élément de la ListView
