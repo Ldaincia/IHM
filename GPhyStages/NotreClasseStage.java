@@ -5,7 +5,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class Stage {
+public class NotreClasseStage {
 
     private final IntegerProperty num_offre;
     private final StringProperty  nom_structure;
@@ -16,7 +16,7 @@ public class Stage {
     private final StringProperty  mois_debut;
     private final StringProperty  promotion_etu;
 
-    public Stage(int num_offre, String nom_structure, String sujet, String intitule, String lieu, int duree, String mois_debut, String promotion_etu){
+    public NotreClasseStage(int num_offre, String nom_structure, String sujet, String intitule, String lieu, int duree, String mois_debut, String promotion_etu){
         this.num_offre = new SimpleIntegerProperty(num_offre);
         this.nom_structure = new SimpleStringProperty(nom_structure);
         this.sujet = new SimpleStringProperty(sujet);

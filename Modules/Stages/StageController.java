@@ -5,9 +5,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import GPhyStages.Main;
-import GPhyStages.Stage;
+import GPhyStages.NotreClasseStage;
 
-/*
 import GPhyStages.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
- */
+
 
 public class StageController {
 
@@ -69,7 +68,7 @@ public class StageController {
         tableStage.setItems(main.getStages());
     }
 
-    private Main main;
+    private Main ;
     @FXML private Button home;
 
     public StageController(Main newMain){

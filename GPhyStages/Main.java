@@ -8,11 +8,9 @@ import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import javafx.application.Platform;
 import javafx.scene.Scene;
 
 
@@ -21,6 +19,7 @@ import java.io.IOException;
 public class Main extends Application {
 
     private static final ObservableList<GPhyStages.Stage> stages = FXCollections.observableArrayList();
+    public Tools tools;
     private Stage primaryStage;
     private BorderPane rootLayout;
 
@@ -45,6 +44,7 @@ public class Main extends Application {
         primaryStage.show();
         */
     }
+
     public void init() {
         stageController = new StageController(this);
         nouveauStageController = new NouveauStageController(this);
@@ -88,13 +88,32 @@ public class Main extends Application {
         return primaryStage;
     }
 
+    public AccueilController getAccueilController() {
+        return accueilController;
+    }
+
+    public InfosController getInfosController() {
+        return infosController;
+    }
+
+    public StageController getStageController () {
+        return stageController;
+    }
+
+    public NouveauStageController getNouveauStageController() {
+        return nouveauStageController;
+    }
+
     public Main(){
         BDD.selectionBDD(stages);
     }
 
-    public ObservableList<GPhyStages.Stage> getStages(){return stages;}
+    public ObservableList<Stage> getStages(){return stages;}
 
     public static void main (String [] args) {
         launch(args);
     }
+
+
+
 }
