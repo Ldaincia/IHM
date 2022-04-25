@@ -102,9 +102,10 @@ public class BDD {
 
     /**
      * selection des stages (toutes les lignes)
+     * @param stages
      */
 
-    public static void selectionBDD(ObservableList<GPhyStages.Stage> stages) {
+    public static void selectionBDD(ObservableList<NotreClasseStage> stages) {
         String query = "SELECT * FROM " + tableName;
         try (Connection connection = connect(location)) {
             PreparedStatement statement = connection.prepareStatement(query);

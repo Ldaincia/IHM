@@ -4,6 +4,7 @@ import Modules.NosInfos.InfosController;
 import Modules.Stages.StageController;
 import Modules.Stages.AjoutStage.NouveauStageController;
 import Modules.Accueil.AccueilController;
+import GPhyStages.NotreClasseStage;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,16 +19,13 @@ import java.io.IOException;
 
 public class Main extends Application {
 
-    private static final ObservableList<GPhyStages.Stage> stages = FXCollections.observableArrayList();
+    private static final ObservableList<GPhyStages.NotreClasseStage> stages = FXCollections.observableArrayList();
     public Tools tools;
     private Stage primaryStage;
     private BorderPane rootLayout;
-
     private StageController stageController;
     private NouveauStageController nouveauStageController;
-
     private AccueilController accueilController;
-
     private InfosController infosController;
 
     @Override
@@ -84,6 +82,7 @@ public class Main extends Application {
         }
    }
 
+// NOS GETTERS
     public Stage getPrimaryStage(){
         return primaryStage;
     }
@@ -104,11 +103,15 @@ public class Main extends Application {
         return nouveauStageController;
     }
 
+    // FIN DE NOS GETTERS
+
+
     public Main(){
-        BDD.selectionBDD(stages);
+        ObservableList<GPhyStages.NotreClasseStage> NotreClasseStage = null;
+        BDD.selectionBDD(NotreClasseStage);
     }
 
-    public ObservableList<Stage> getStages(){return stages;}
+    public ObservableList<NotreClasseStage> getNotreClasseStage (){return getNotreClasseStage();}
 
     public static void main (String [] args) {
         launch(args);
