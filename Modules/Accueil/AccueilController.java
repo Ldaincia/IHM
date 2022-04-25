@@ -22,7 +22,7 @@ public class AccueilController {
 //        main.tools.goHome(home);
 //    }
 
-/*
+
     public void goToStage(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Stages/Stage.fxml", main.getStageController());
@@ -32,5 +32,4 @@ public class AccueilController {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "NosInfos/NosInfos.fxml", main.getInfosController());
     }
-*/
 }

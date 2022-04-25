@@ -69,8 +69,6 @@ public class StageController {
         tableStage.setItems(main.getStages());
     }
 
-
-    /*
     private Main main;
     @FXML private Button home;
 
@@ -93,7 +91,6 @@ public class StageController {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Stages/AjoutStage/NouveauStage.fxml", main.getNouveauStageController());
     }
-*/
 
 
 

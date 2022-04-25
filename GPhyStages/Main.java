@@ -1,6 +1,9 @@
 package GPhyStages;
 
+import Modules.NosInfos.InfosController;
 import Modules.Stages.StageController;
+import Modules.Stages.AjoutStage.NouveauStageController;
+import Modules.Accueil.AccueilController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,6 +15,7 @@ import javafx.stage.Stage;
 import javafx.application.Platform;
 import javafx.scene.Scene;
 
+
 import java.io.IOException;
 
 public class Main extends Application {
@@ -19,6 +23,13 @@ public class Main extends Application {
     private static final ObservableList<GPhyStages.Stage> stages = FXCollections.observableArrayList();
     private Stage primaryStage;
     private BorderPane rootLayout;
+
+    private StageController stageController;
+    private NouveauStageController nouveauStageController;
+
+    private AccueilController accueilController;
+
+    private InfosController infosController;
 
     @Override
     public void start (Stage primaryStage) {
@@ -34,6 +45,13 @@ public class Main extends Application {
         primaryStage.show();
         */
     }
+    public void init() {
+        stageController = new StageController(this);
+        nouveauStageController = new NouveauStageController(this);
+        accueilController = new AccueilController(this);
+        infosController = new InfosController(this);
+    }
+
 
     public void initRootLayout(){
         try{
@@ -48,6 +66,8 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
+
+
 
    public void showStageOverview(){
         try{
