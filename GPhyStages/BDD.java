@@ -11,8 +11,12 @@ import java.util.logging.Logger;
 public class BDD {
 
     //string contenant le lien vers la BDD
-    private static final String location = "database.db";
+    private static final String location = BDD.class.getResource("scr/GPhyStages/database.db").toExternalForm();
     private static final String tableName = "offre_stage";
+
+    public static String getLocation() {
+        return location;
+    }
 
     /**
      * Permet de se connecter à la base de données
@@ -41,7 +45,7 @@ public class BDD {
     public static void insertStage(ObservableList<GPhyStages.NotreClasseStage> stages, String nom, String sub, String intitu, String adresse, int dur, String mois, String promo) {
         //update database
         int id = (int) CRUDHelper.create(
-                "Stage",
+                tableName,
                 new String[]{"nom_structure","sujet","intitule","lieu","duree","mois_debut","promotion_etu"},
                 new Object[]{nom,sub,intitu,adresse,dur,mois,promo},
                 new int[]{Types.VARCHAR, Types.VARCHAR,Types.VARCHAR,Types.VARCHAR,Types.INTEGER,Types.VARCHAR,Types.VARCHAR});
@@ -112,7 +116,6 @@ public class BDD {
             ResultSet rs = statement.executeQuery();
             stages.clear();
             while (rs.next()) {
-                Main Main;
                 stages.add(new NotreClasseStage( new Main(),
                         rs.getInt("num_offre"),
                         rs.getString("nom_structure"),

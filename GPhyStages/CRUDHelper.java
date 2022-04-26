@@ -17,7 +17,7 @@ public class CRUDHelper {
         queryBuilder.append(indexFieldName);
         queryBuilder.append(" = ");
         queryBuilder.append(convertObjectToSQLField(index, indexDataType));
-        try (Connection connection = BDD.connect("https://github.com/Ldaincia/IHM/blob/main/Database/database.db")) {
+        try (Connection connection = BDD.connect(BDD.getLocation())) {
             PreparedStatement statement = connection.prepareStatement(queryBuilder.toString());
             try (ResultSet rs = statement.executeQuery()) {
                 rs.next();
@@ -56,7 +56,7 @@ public class CRUDHelper {
         queryBuilder.append(" = ");
         queryBuilder.append(convertObjectToSQLField(index, indexDataType));
 
-        try (Connection conn = BDD.connect("https://github.com/Ldaincia/IHM/blob/main/Database/database.db")) {
+        try (Connection conn = BDD.connect(BDD.getLocation())) {
             PreparedStatement pstmt = conn.prepareStatement(queryBuilder.toString());
 
             return pstmt.executeUpdate(); //number of affected rows
@@ -92,7 +92,7 @@ public class CRUDHelper {
         }
         queryBuilder.append(");");
 
-        try (Connection conn = BDD.connect("https://github.com/Ldaincia/IHM/blob/main/Database/database.db")) {
+        try (Connection conn = BDD.connect(BDD.getLocation())) {
             PreparedStatement pstmt = conn.prepareStatement(queryBuilder.toString());
 
             int affectedRows = pstmt.executeUpdate();
@@ -117,7 +117,7 @@ public class CRUDHelper {
     public static int delete(String tableName, int id) {
         String sql = "DELETE FROM " + tableName + " WHERE id = ?";
 
-        try (Connection conn = BDD.connect("https://github.com/Ldaincia/IHM/blob/main/Database/database.db")) {
+        try (Connection conn = BDD.connect(BDD.getLocation())) {
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, id);
             return pstmt.executeUpdate();
