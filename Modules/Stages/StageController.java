@@ -65,7 +65,7 @@ public class StageController {
 
     public void setMain (Main main){
         this.main = main;
-        tableStage.setItems(main.getStages());
+        tableStage.setItems(main.getNotreClasseStage());
     }
 
     @FXML private Button home;

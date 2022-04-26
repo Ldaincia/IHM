@@ -10,7 +10,6 @@ public class NotreClasseStage {
 
     private Main main;
 
-
     private final IntegerProperty num_offre;
     private final StringProperty  nom_structure;
     private final StringProperty  sujet;
