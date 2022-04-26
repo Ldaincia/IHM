@@ -5,7 +5,11 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+
 public class NotreClasseStage {
+
+    private Main main;
+
 
     private final IntegerProperty num_offre;
     private final StringProperty  nom_structure;
@@ -16,7 +20,8 @@ public class NotreClasseStage {
     private final StringProperty  mois_debut;
     private final StringProperty  promotion_etu;
 
-    public NotreClasseStage(int num_offre, String nom_structure, String sujet, String intitule, String lieu, int duree, String mois_debut, String promotion_etu){
+
+    public NotreClasseStage(Main newMain, int num_offre, String nom_structure, String sujet, String intitule, String lieu, int duree, String mois_debut, String promotion_etu){
         this.num_offre = new SimpleIntegerProperty(num_offre);
         this.nom_structure = new SimpleStringProperty(nom_structure);
         this.sujet = new SimpleStringProperty(sujet);
@@ -75,3 +80,4 @@ public class NotreClasseStage {
     public void setPromotion_etu(String promotion_etu){this.promotion_etu.set(promotion_etu);}
     public StringProperty promotion_etuProperty(){return promotion_etu;}
 }
+

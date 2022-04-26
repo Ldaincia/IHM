@@ -4,7 +4,6 @@ import Modules.NosInfos.InfosController;
 import Modules.Stages.StageController;
 import Modules.Stages.AjoutStage.NouveauStageController;
 import Modules.Accueil.AccueilController;
-import GPhyStages.NotreClasseStage;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -111,12 +110,19 @@ public class Main extends Application {
         BDD.selectionBDD(NotreClasseStage);
     }
 
-    public ObservableList<NotreClasseStage> getNotreClasseStage (){return getNotreClasseStage();}
+
+    // POUR POUVOIR ECRIRE DANS NOTRE CLASSE NOTRECLASSESTAGE
+    private ObservableList<NotreClasseStage> notreClasseStage() { return notreClasseStage();
+    };
+    public ObservableList<NotreClasseStage> getNotreClasseStage (){return notreClasseStage();}
+    //
+
 
     public static void main (String [] args) {
         launch(args);
     }
 
 
-
+    public ObservableList<NotreClasseStage> getStages() {
+    }
 }
