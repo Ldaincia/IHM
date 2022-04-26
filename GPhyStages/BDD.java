@@ -38,7 +38,7 @@ public class BDD {
     /**
      * Ajout d'un stage
      */
-    public static void insertStage(ObservableList<GPhyStages.Stage> stages, String nom, String sub, String intitu, String adresse, int dur, String mois, String promo) {
+    public static void insertStage(ObservableList<GPhyStages.NotreClasseStage> stages, String nom, String sub, String intitu, String adresse, int dur, String mois, String promo) {
         //update database
         int id = (int) CRUDHelper.create(
                 "Stage",
@@ -46,7 +46,7 @@ public class BDD {
                 new Object[]{nom,sub,intitu,adresse,dur,mois,promo},
                 new int[]{Types.VARCHAR, Types.VARCHAR,Types.VARCHAR,Types.VARCHAR,Types.INTEGER,Types.VARCHAR,Types.VARCHAR});
         //update cache
-        stages.add(new Stage(id,nom,sub,intitu,adresse,dur,mois,promo));
+        stages.add(new NotreClasseStage(new Main(), id,nom,sub,intitu,adresse,dur,mois,promo));
     }
 
     /**
@@ -72,7 +72,7 @@ public class BDD {
     /**
      * modification d'un stage depuis l'id
      */
-    public static void updateStage(ObservableList<GPhyStages.Stage> stages, Stage newStage) {
+    public static void updateStage(ObservableList<GPhyStages.NotreClasseStage> stages, NotreClasseStage newStage) {
         //udpate database
         int rows = (int) CRUDHelper.update(
                 "Stage",
@@ -89,7 +89,7 @@ public class BDD {
             throw new IllegalStateException("Person to be updated with id " + newStage.getNum_offre() + " didn't exist in database");
 
         //update cache
-        Optional<Stage> optionalStage = getStage(stages, newStage.getNum_offre());
+        Optional<NotreClasseStage> optionalStage = getStage(stages, newStage.getNum_offre());
         optionalStage.ifPresentOrElse((oldStage) -> {
             stages.remove(oldStage);
             stages.add(newStage);
@@ -112,7 +112,8 @@ public class BDD {
             ResultSet rs = statement.executeQuery();
             stages.clear();
             while (rs.next()) {
-                stages.add(new Stage(
+                Main Main;
+                stages.add(new NotreClasseStage( new Main(),
                         rs.getInt("num_offre"),
                         rs.getString("nom_structure"),
                         rs.getString("sujet"),
@@ -133,8 +134,8 @@ public class BDD {
     /**
      * selection d'un stage à partir de l'id
      */
-    public static Optional<Stage> getStage(ObservableList<GPhyStages.Stage> stages, int num){
-        for (Stage stage : stages) {
+    public static Optional<NotreClasseStage> getStage(ObservableList<GPhyStages.NotreClasseStage> stages, int num){
+        for (NotreClasseStage stage : stages) {
             if (stage.getNum_offre() == num) return Optional.of(stage);
         }
         return Optional.empty();
