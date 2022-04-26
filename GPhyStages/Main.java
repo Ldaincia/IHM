@@ -122,7 +122,4 @@ public class Main extends Application {
         launch(args);
     }
 
-
-    public ObservableList<NotreClasseStage> getStages() {
-    }
 }

@@ -68,7 +68,6 @@ public class StageController {
         tableStage.setItems(main.getStages());
     }
 
-    private Main ;
     @FXML private Button home;
 
     public StageController(Main newMain){
