@@ -106,8 +106,7 @@ public class Main extends Application {
 
 
     public Main(){
-        ObservableList<GPhyStages.NotreClasseStage> NotreClasseStage = null;
-        BDD.selectionBDD(NotreClasseStage);
+        BDD.selectionBDD(stages);
     }
 
 

@@ -11,8 +11,8 @@ import java.util.logging.Logger;
 public class BDD {
 
     //string contenant le lien vers la BDD
-    private static final String location = "Database/database.db";
-    private static final String tableName = "OFFRE_STAGE";
+    private static final String location = "database.db";
+    private static final String tableName = "offre_stage";
 
     /**
      * Permet de se connecter à la base de données
