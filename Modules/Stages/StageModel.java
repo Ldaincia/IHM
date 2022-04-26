@@ -1,10 +1,12 @@
 package Modules.Stages;
 
 
+import GPhyStages.BDD;
 import GPhyStages.Main;
 
 import java.io.IOException;
 
+import GPhyStages.NotreClasseStage;
 import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
 
@@ -30,18 +32,10 @@ public class StageModel {
     /**
      * Permet d'envoyer la requête de suppression et de retirer l'élément de la ListView
      * @param theListView
-     * @param laDonnee la donnée pré-opératoire à supprimer
+     * @param leStage le tissu à supprimer
      */
-    /*
-    public void removeItemList(ListView theListView, Stages laDonnee, Text errorText) throws IOException {
-        DataBase.deletePreopDataRequest(laDonnee.getIdPreop());
-
-        if (checkPreopDataDeleted(laDonnee.getIdPreop())) {
-            theListView.getItems().remove(laDonnee);
-        } else {
-            errorText.setText("Elément non supprimé, cette donnée pré-opératoire est encore liée à des phénotypes");
-        }
-    }
-     */
+//    public void removeItemList(ListView theListView, NotreClasseStage leStage, Text errorText) throws IOException {
+//        BDD.deleteTissuRequest(leTissu.getIdTissue());
+//    }
 }
 

@@ -16,7 +16,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="610.0" prefWidth="887.0" style="-fx-background-color: #BD658A;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modules.Stages.StageController">
+<AnchorPane prefHeight="610.0" prefWidth="887.0" style="-fx-background-color: #BD658A;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modules.Stages.StageController">
    <children>
       <SubScene height="563.0" layoutX="15.0" layoutY="26.0" style="-fx-effect: #201E1F;" width="851.0">
          <root>
@@ -69,7 +69,7 @@
                   <ButtonBar layoutX="66.0" layoutY="290.0" prefHeight="40.0" prefWidth="284.0">
                     <buttons>
                         <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="142.0" text="MODIFIER OFFRE" />
-                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="142.0" text="SUPPRIMER OFFRE" />
+                        <Button mnemonicParsing="false" onAction="#DeleteButton" prefHeight="28.0" prefWidth="142.0" text="SUPPRIMER OFFRE" />
                     </buttons>
                   </ButtonBar>
                   <GridPane layoutX="14.0" layoutY="14.0" prefHeight="226.0" prefWidth="388.0">
@@ -107,5 +107,6 @@
             </AnchorPane>
          </items>
       </SplitPane>
+      <Label fx:id="errorStage" layoutX="572.0" layoutY="551.0" prefHeight="17.0" prefWidth="273.0" />
    </children>
 </AnchorPane>

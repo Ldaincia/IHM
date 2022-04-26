@@ -1,16 +1,14 @@
 package Modules.Stages;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import GPhyStages.Main;
 import GPhyStages.NotreClasseStage;
 
 import GPhyStages.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -70,6 +68,7 @@ public class StageController {
 
     @FXML private Button home;
 
+
     public StageController(Main newMain){
         main = newMain;
     }
@@ -90,6 +89,21 @@ public class StageController {
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Stages/AjoutStage/NouveauStage.fxml", main.getNouveauStageController());
     }
 
+    @FXML private Text errorStage;
+
+    /**
+     * Permet d'aller chercher en BDD un stage
+     */
+//
+//    public void DeleteButton() throws IOException {
+//        if (tableStage.getSelectionModel().getSelectedItem() != null ) {
+//            errorStage.setText("");
+//            StageController.removeItemList(tableStage, (NotreClasseStage) tableStage.getSelectionModel().getSelectedItem(), errorStage);
+//            tableStage.getSelectionModel().clearSelection();
+//        } else {
+//            errorStage.setText("Aucun élément n'a été sélectionné");
+//        }
+//    }
 
 
 }
