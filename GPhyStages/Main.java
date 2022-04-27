@@ -8,6 +8,7 @@ import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -21,20 +22,19 @@ public class Main extends Application {
     private static final ObservableList<GPhyStages.NotreClasseStage> stages = FXCollections.observableArrayList();
     public Tools tools;
     private Stage primaryStage;
-    private BorderPane rootLayout;
+    private Parent rootLayout;
     private StageController stageController;
     private NouveauStageController nouveauStageController;
     private AccueilController accueilController;
     private InfosController infosController;
 
     @Override
-    public void start (Stage primaryStage) {
+    public void start (Stage primaryStage) throws IOException {
+        init();
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle(" TITRE FENETRE ");
-
         initRootLayout();
-
-        showStageOverview();
+        //showStageOverview();
         /*
         primaryStage.setOnCloseRequest(e -> Platform.exit());
         primaryStage.setScene(new Scene(new Label(" HELLO WORLD "), 1280, 720));
@@ -52,9 +52,9 @@ public class Main extends Application {
 
     public void initRootLayout(){
         try{
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("Acceuil.fxml"));
-            rootLayout = (BorderPane) loader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../Modules/Accueil/Accueil.fxml"));
+            loader.setController(this.accueilController);
+            rootLayout = (Parent) loader.load();
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
@@ -72,7 +72,7 @@ public class Main extends Application {
             loader.setLocation(Main.class.getResource("Modules/Stages/Stage.fxml"));
             AnchorPane stageOverview = (AnchorPane) loader.load();
 
-            rootLayout.setCenter(stageOverview);
+            //rootLayout.setCenter(stageOverview);
 
             StageController controller = loader.getController();
             controller.setMain(this);
@@ -105,10 +105,6 @@ public class Main extends Application {
     // FIN DE NOS GETTERS
 
 
-    public Main(){
-        BDD.selectionBDD(stages);
-    }
-
 
     // POUR POUVOIR ECRIRE DANS NOTRE CLASSE NOTRECLASSESTAGE
     private ObservableList<NotreClasseStage> notreClasseStage() { return notreClasseStage();
@@ -118,6 +114,7 @@ public class Main extends Application {
 
 
     public static void main (String [] args) {
+        //System.out.println(BDD.checkDrivers());
         launch(args);
     }
 

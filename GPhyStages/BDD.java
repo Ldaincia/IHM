@@ -11,12 +11,24 @@ import java.util.logging.Logger;
 public class BDD {
 
     //string contenant le lien vers la BDD
-    private static final String location = BDD.class.getResource("scr/GPhyStages/database.db").toExternalForm();
+    private static final String location = BDD.class.getResource("database.db").toExternalForm();
     private static final String tableName = "offre_stage";
 
     public static String getLocation() {
         return location;
     }
+
+    public static boolean checkDrivers() {
+        try {
+            Class.forName("org.sqlite.JDBC");
+            DriverManager.registerDriver(new org.sqlite.JDBC());
+            return true;
+        } catch (ClassNotFoundException | SQLException classNotFoundException) {
+            Logger.getAnonymousLogger().log(Level.SEVERE, LocalDateTime.now() + ": Could not start SQLite Drivers");
+            return false;
+        }
+    }
+
 
     /**
      * Permet de se connecter à la base de données
