@@ -8,6 +8,7 @@ import javafx.beans.property.StringProperty;
 
 public class NotreClasseStage {
 
+    public int getId;
     private Main main;
 
     private final IntegerProperty num_offre;
@@ -78,5 +79,7 @@ public class NotreClasseStage {
     }
     public void setPromotion_etu(String promotion_etu){this.promotion_etu.set(promotion_etu);}
     public StringProperty promotion_etuProperty(){return promotion_etu;}
+
+    public int getId() {return getId;}
 }
 

@@ -1,40 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Point3D?>
 <?import javafx.scene.SubScene?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="610.0" prefWidth="887.0" style="-fx-background-color: #BD658A;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modules.Stages.Stage">
+<AnchorPane prefHeight="610.0" prefWidth="887.0" style="-fx-background-color: #BD658A; -fx-border-color: #201E1F;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modules.Stages.Stage">
    <children>
-      <SubScene height="563.0" layoutX="15.0" layoutY="26.0" style="-fx-effect: #201E1F;" width="851.0">
+      <SubScene height="563.0" layoutX="15.0" layoutY="26.0" style="-fx-effect: #201E1F; -fx-scale-y: #201E1F; -fx-blend-mode: #201E1F;" width="851.0">
          <root>
             <Region />
          </root>
       </SubScene>
-      <Label layoutX="248.0" layoutY="45.0" text="Nos informations">
+      <Label layoutX="298.0" layoutY="45.0" text="Nos informations">
          <font>
             <Font size="41.0" />
          </font>
       </Label>
       <Pane layoutX="15.0" layoutY="127.0" prefHeight="37.0" prefWidth="851.0" style="-fx-background-color: #BD658A; -fx-border-color: #201E1F;">
          <children>
-            <Button layoutX="161.0" layoutY="-12.0" mnemonicParsing="false" onAction="#goAccueil" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Accueil">
+            <Button layoutX="155.0" layoutY="-11.0" mnemonicParsing="false" onAction="#goToStage" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Accueil">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Verdana Bold" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="475.0" layoutY="-13.0" mnemonicParsing="false" onAction="#goToStage" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Offres de stage">
+            <Button layoutX="453.0" layoutY="-11.0" mnemonicParsing="false" onAction="#goToStage" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Offres de stage">
                <font>
-                  <Font name="Baskerville Old Face" size="18.0" />
+                  <Font name="Verdana Bold" size="18.0" />
                </font>
             </Button>
          </children>
       </Pane>
       <Line endX="100.0" startX="-100.0" />
+      <TextArea layoutX="70.0" layoutY="247.0" prefHeight="172.0" prefWidth="769.0" style="-fx-border-color: #201E1F; -fx-background-color: #BD658A;" text="Bonjour ! &#10;&#10;Bienvenue sur notre application !&#10;&#10;Nous sommes 4 étudiants de Master 1 GPhy, spécialité Physiologie. Dans le cadre de notre option Interaction Homme-Machine, nous avons &#10;réalisé un projet qui avait pour but de créer cette application de gestion des offres de stages, à l'attention des professeurs de GPhy. &#10;&#10;Nous espérons qu'elle vous conviendra ! &#10;">
+         <rotationAxis>
+            <Point3D x="18.0" y="12.0" z="12.0" />
+         </rotationAxis>
+      </TextArea>
    </children>
+   <rotationAxis>
+      <Point3D x="18.0" z="1.0" />
+   </rotationAxis>
 </AnchorPane>

@@ -32,7 +32,7 @@
          <children>
             <Button layoutX="161.0" layoutY="-12.0" mnemonicParsing="false" onAction="#goAccueil" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Accueil">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Verdana Bold" size="18.0" />
                </font>
             </Button>
             <Button layoutX="475.0" layoutY="-13.0" mnemonicParsing="false" onAction="#goToNosInfos" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Nos informations">

@@ -13,7 +13,6 @@ import javafx.event.ActionEvent;
 public class InfosController {
 
     private Main main;
-    @FXML private Button home;
 
     public InfosController(Main newMain){
         main = newMain;

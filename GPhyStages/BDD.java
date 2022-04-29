@@ -155,4 +155,20 @@ public class BDD {
         }
         return Optional.empty();
     }
+
+    public static void deleteStage(int id)
+    {
+        String query = "DELETE FROM NotreClasseStage WHERE id = ?";
+        try (Connection connection = connect(location))
+        {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1,id);
+            statement.execute();
+        }
+
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
+    }
 }
