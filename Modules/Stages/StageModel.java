@@ -18,67 +18,47 @@ public class StageModel {
         main = newMain;
     }
 
-    private String nomStructure;
-    private String sujetStage;
-    private int duree;
-    private String debutStage;
-    private int promo;
+    private String nom_structureColonne;
+    private String sujetColonne;
+    private String lieuColonne;
+    private int dureeColonne;
+    private String mois_debutColonne;
+    private String promotion_etuColonne;
 
     public StageModel(String nom_structureColonne, String sujetColonne, String lieuColonne, int dureeColonne, String mois_debutColonne, String promotion_etuColonne) {
+        this.nom_structureColonne = nom_structureColonne;
+        this.sujetColonne = sujetColonne;
+        this.lieuColonne = lieuColonne;
+        this.dureeColonne = dureeColonne;
+        this.mois_debutColonne = mois_debutColonne;
+        this.promotion_etuColonne = promotion_etuColonne;
     }
 
-    public String getnom_structureColonne() {
-        return nomStructure;
+
+    public String getNom_structureColonne() {
+        return nom_structureColonne;
     }
 
-
-    public void setNomStructure(String nomStructure) {
-        this.nomStructure = nomStructure;
+    public String getSujetColonne() {
+        return sujetColonne;
     }
 
-    public String getSujetStage() {
-        return sujetStage;
+    public String getLieuColonne() {
+        return lieuColonne;
     }
 
-    public void setSujetStage(String sujetStage) {
-        this.sujetStage = sujetStage;
+    public int getDureeColonne() {
+
+        return dureeColonne;
     }
 
-    public int getDuree() {
-        return duree;
+    public String getMois_debutColonne() {
+
+        return mois_debutColonne;
     }
 
-    public void setDuree(int duree) {
-        this.duree = duree;
-    }
-
-    public String getDebutStage() {
-        return debutStage;
-    }
-
-    public void setDebutStage(String debutStage) {
-        this.debutStage = debutStage;
-    }
-
-    public String getPromo() {
-        if (promo == 1) {
-            return "L3";
-        }
-        else if (promo == 2) {
-            return "M1";
-        }
-        else {
-            return "M2";
-        }
-    }
-
-    public void setPromo(int promo) {
-        this.promo = promo;
-    }
-
-    @Override
-    public String toString() {
-        return nomStructure;
+    public String getPromotion_etuColonne() {
+       return promotion_etuColonne;
     }
 
 }
