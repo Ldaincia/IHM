@@ -8,6 +8,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import GPhyStages.Main;
 import GPhyStages.NotreClasseStage;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 
 import GPhyStages.Main;
 import javafx.event.ActionEvent;
@@ -22,7 +24,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import static GPhyStages.BDD.connect;
+import static GPhyStages.BDD.getLocation;
 
 
 public class StageController implements Initializable {
@@ -70,26 +76,28 @@ public class StageController implements Initializable {
         this.mois_debutColonne = mois_debutColonne;
         this.promotion_etuColonne = promotion_etuColonne;
 
-    };
+    }
 
-     @FXML
-    public void viewStage(){
-        try (Connection connection = BDD.connect(BDD.getLocation())){
+    ;
+
+    @FXML
+    public void viewStage() {
+        try (Connection connection = connect(BDD.getLocation())) {
             String sql = "SELECT * FROM mesStages";
             PreparedStatement stat = connection.prepareStatement(sql);
             ResultSet rs = stat.executeQuery();
             data.clear();
-            while(rs.next()) {
-                data.add(new StageModel(rs.getString(1),rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6)));
+            while (rs.next()) {
+                data.add(new StageModel(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6)));
             }
             connection.close();
-        } catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     @FXML
-    private void initialize(){
+    private void initialize() {
         nom_structureColonne.setCellValueFactory(cellData -> cellData.getValue().nom_structureProperty());
         sujetColonne.setCellValueFactory(cellData -> cellData.getValue().sujetProperty());
         lieuColonne.setCellValueFactory(cellData -> cellData.getValue().lieuProperty());
@@ -98,15 +106,16 @@ public class StageController implements Initializable {
         promotion_etuColonne.setCellValueFactory(cellData -> cellData.getValue().promotion_etuProperty());
     }
 
-    public void setMain (Main main){
+    public void setMain(Main main) {
         this.main = main;
         tableStage.setItems(main.getNotreClasseStage());
     }
 
-    @FXML private Button home;
+    @FXML
+    private Button home;
 
 
-    public StageController(Main newMain){
+    public StageController(Main newMain) {
         main = newMain;
     }
 

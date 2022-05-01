@@ -68,7 +68,7 @@ public class BDD {
     /**
      * suppression d'un stage à partir de l'id
      */
-    public static int deleteStage(String tableName, int id) {
+    public static int deleteStage(int id) {
         String sql = "DELETE FROM " + tableName + " WHERE id = ?";
 
         try (Connection conn = connect(location)) {
@@ -84,21 +84,21 @@ public class BDD {
             return -1;
         }
     }
-    public static void deleteStage(int id)
-    {
-        String query = "DELETE FROM NotreClasseStage WHERE id = ?";
-        try (Connection connection = connect(location))
-        {
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setInt(1,id);
-            statement.execute();
-        }
-
-        catch (Exception e)
-        {
-            System.out.println(e);
-        }
-    }
+//    public static void deleteStage(int id)
+//    {
+//        String query = "DELETE FROM NotreClasseStage WHERE id = ?";
+//        try (Connection connection = connect(location))
+//        {
+//            PreparedStatement statement = connection.prepareStatement(query);
+//            statement.setInt(1,id);
+//            statement.execute();
+//        }
+//
+//        catch (Exception e)
+//        {
+//            System.out.println(e);
+//        }
+//    }
 
     /**
      * modification d'un stage depuis l'id

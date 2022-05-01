@@ -4,6 +4,8 @@ import GPhyStages.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,20 +20,34 @@ public class NouveauStageController {
         main = newMain;
     }
 
-/*
-    public void butt() throws IOException, SQLException {
-        main.tools.goHome(home);
-    }
-
-    public void goHome(ActionEvent e) throws IOException {
+    public void goAccueil(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), " ", main.getAccueilController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Accueil/Accueil.fxml", main.getAccueilController());
     }
 
     public void goToNosInfos(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "NosInfos/NosInfos.fxml", main.getInfosController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Stages/Stage.fxml", main.getStageController());
     }
 
- */
+
+    public void ajoutNouveauStage() throws IOException {
+        String laStructure = " ";
+        String leSujet = " ";
+        String leLieu = " ";
+        Integer laDuree = null;
+        String leDebut = " ";
+        String laPromo = " ";
+        Button ajoutStageBouton = null;
+        NouveauStageModel.ajoutNouveauStage(laStructure, leSujet, leLieu, laDuree, leDebut, laPromo, ajoutStageBouton);
+
+    }
+
+    public void onEnter(KeyEvent ke) throws IOException {
+        if (ke.getCode().equals(KeyCode.ENTER))
+        {
+            this.ajoutNouveauStage();
+        }
+    }
+
 }
