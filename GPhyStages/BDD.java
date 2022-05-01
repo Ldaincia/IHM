@@ -79,9 +79,24 @@ public class BDD {
         } catch (SQLException e) {
             Logger.getAnonymousLogger().log(
                     Level.SEVERE,
-                    LocalDateTime.now() + ": Could not delete from " + tableName + " by id " + id +
-                            " because " + e.getCause());
+                    LocalDateTime.now() + ": Ne peut pas être supprimée de la table " + tableName +
+                            " car " + e.getCause());
             return -1;
+        }
+    }
+    public static void deleteStage(int id)
+    {
+        String query = "DELETE FROM NotreClasseStage WHERE id = ?";
+        try (Connection connection = connect(location))
+        {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1,id);
+            statement.execute();
+        }
+
+        catch (Exception e)
+        {
+            System.out.println(e);
         }
     }
 
@@ -156,19 +171,5 @@ public class BDD {
         return Optional.empty();
     }
 
-    public static void deleteStage(int id)
-    {
-        String query = "DELETE FROM NotreClasseStage WHERE id = ?";
-        try (Connection connection = connect(location))
-        {
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setInt(1,id);
-            statement.execute();
-        }
 
-        catch (Exception e)
-        {
-            System.out.println(e);
-        }
-    }
 }

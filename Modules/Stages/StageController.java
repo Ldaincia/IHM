@@ -1,7 +1,10 @@
 package Modules.Stages;
 
 import GPhyStages.BDD;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import GPhyStages.Main;
 import GPhyStages.NotreClasseStage;
@@ -13,25 +16,32 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 
-public class StageController {
+public class StageController implements Initializable {
 
     @FXML
     private TableView<NotreClasseStage> tableStage;
     @FXML
-    private TableColumn<NotreClasseStage, String> nom_structureColonne;
+    private String nom_structureColonne;
     @FXML
-    private TableColumn<NotreClasseStage, String> sujetColonne;
+    private String sujetColonne;
+
+    public ObservableList<StageModel> data = FXCollections.observableArrayList();
     @FXML
-    private TableColumn<NotreClasseStage, String> lieuColonne;
+    private String lieuColonne;
     @FXML
-    private TableColumn<NotreClasseStage, Integer> dureeColonne;
+    private int dureeColonne;
     @FXML
-    private TableColumn<NotreClasseStage, String> mois_debutColonne;
+    private String mois_debutColonne;
     @FXML
-    private TableColumn<NotreClasseStage, String> promotion_etuColonne;
+    private String promotion_etuColonne;
 
     @FXML
     private Label nom_structureLabel;
@@ -50,7 +60,33 @@ public class StageController {
 
     private Main main;
 
-    public StageController(){}
+    public StageController(String nom_structureColonne, String sujetColonne, String lieuColonne, int dureeColonne, String mois_debutColonne, String promotion_etuColonne) {
+
+        this.nom_structureColonne = nom_structureColonne;
+        this.sujetColonne = sujetColonne;
+        this.lieuColonne = lieuColonne;
+        this.dureeColonne = dureeColonne;
+        this.mois_debutColonne = mois_debutColonne;
+        this.promotion_etuColonne = promotion_etuColonne;
+
+    };
+
+     @FXML
+    public void viewStage(){
+        try (Connection connection = BDD.connect(BDD.getLocation())){
+            String sql = "SELECT * FROM mesStages";
+            PreparedStatement stat = connection.prepareStatement(sql);
+            ResultSet rs = stat.executeQuery();
+            data.clear();
+            while(rs.next()) {
+                data.add(new StageModel(rs.getString(1),rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6)));
+            }
+            connection.close();
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
 
     @FXML
     private void initialize(){
@@ -91,8 +127,13 @@ public class StageController {
     }
 
 
-    public void deleteStage(NotreClasseStage leStage, ListView laListe) {
+    public void deleteStage(NotreClasseStage leStage, TableView laListe) {
         BDD.deleteStage(leStage.getId());
         laListe.getItems().remove(leStage);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 }
