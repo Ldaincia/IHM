@@ -127,9 +127,9 @@ public class StageController implements Initializable {
     }
 
 
-    public void deleteStage(NotreClasseStage leStage, TableView laListe) {
+    public void deleteStage(NotreClasseStage leStage, TableView laColonne) {
         BDD.deleteStage(leStage.getId());
-        laListe.getItems().remove(leStage);
+        laColonne.getItems().remove(leStage);
     }
 
     @Override
