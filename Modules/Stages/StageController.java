@@ -12,6 +12,7 @@ import GPhyStages.NotreClasseStage;
 import GPhyStages.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -86,7 +87,6 @@ public class StageController implements Initializable {
             e.printStackTrace();
         }
     }
-
 
     @FXML
     private void initialize(){
