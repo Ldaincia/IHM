@@ -3,19 +3,9 @@ package GPhyStages;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-
-import java.net.URL;
-import java.net.URLConnection;
-import java.sql.Date;
-import java.sql.SQLException;
-import java.util.ArrayList;
 
 
 public class Tools {

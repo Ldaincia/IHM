@@ -30,7 +30,6 @@ public class NouveauStageController {
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Stages/Stage.fxml", main.getStageController());
     }
 
-
     public void ajoutNouveauStage() throws IOException {
         String laStructure = " ";
         String leSujet = " ";

@@ -68,37 +68,53 @@ public class BDD {
     /**
      * suppression d'un stage à partir de l'id
      */
-    public static int deleteStage(int id) {
-        String sql = "DELETE FROM " + tableName + " WHERE id = ?";
-
-        try (Connection conn = connect(location)) {
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, id);
-            return pstmt.executeUpdate();
-
-        } catch (SQLException e) {
-            Logger.getAnonymousLogger().log(
-                    Level.SEVERE,
-                    LocalDateTime.now() + ": Ne peut pas être supprimée de la table " + tableName +
-                            " car " + e.getCause());
-            return -1;
-        }
-    }
-//    public static void deleteStage(int id)
-//    {
-//        String query = "DELETE FROM NotreClasseStage WHERE id = ?";
-//        try (Connection connection = connect(location))
-//        {
-//            PreparedStatement statement = connection.prepareStatement(query);
-//            statement.setInt(1,id);
-//            statement.execute();
-//        }
+//    public static int deleteStage(int id) {
+//        String sql = "DELETE FROM " + tableName + " WHERE id = ?";
 //
-//        catch (Exception e)
-//        {
-//            System.out.println(e);
+//        try (Connection conn = connect(location)) {
+//            PreparedStatement pstmt = conn.prepareStatement(sql);
+//            pstmt.setInt(1, id);
+//            return pstmt.executeUpdate();
+//
+//        } catch (SQLException e) {
+//            Logger.getAnonymousLogger().log(
+//                    Level.SEVERE,
+//                    LocalDateTime.now() + ": Ne peut pas être supprimée de la table " + tableName +
+//                            " car " + e.getCause());
+//            return -1;
 //        }
 //    }
+    public static void deleteStage(int id)
+    {
+        String query = "DELETE FROM NotreClasseStage WHERE id = ?";
+        try (Connection connection = connect(location))
+        {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1,id);
+            statement.execute();
+        }
+
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
+    }
+
+    public static void addStage(int id2)
+    {
+        String query = "ADD FROM NotreClasseStage WHERE id2 = ?";
+        try (Connection connection = connect(location))
+        {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1,id2);
+            statement.execute();
+        }
+
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
+    }
 
     /**
      * modification d'un stage depuis l'id

@@ -53,17 +53,13 @@ public class NouveauStageModel {
         this.promotion_etuColonne = laPromo;
     }
 
+    private Main main;
 
-    public void ajoutNouveauStage(TextField laStructure, TextField leSujet, TextField leLieu, TextField laDuree, TextField leDebut, TextField laPromo, Button ajoutStageBouton)throws IOException {
+    public void ajoutNouveauStage(TextField laStructure, TextField leSujet, TextField leLieu, Integer laDuree, TextField leDebut, TextField laPromo, Button ajoutStageBouton)throws IOException {
         if (!ajoutStageBouton.getText().isEmpty()) {
-            Main main = null;
-            BDD.createOrganRequest(main.tools.spaceToUnderscore(ajoutStageBouton.getText().toUpperCase()));
-            main.tools.switchScene((Stage) ajoutStageBouton.getScene().getWindow(), "Administration/Listing/Organe/AdminListOrgane.fxml", main.getAdminListOrganeController());
-            main.getAdminListOrganeController().addElementList();
-
-        }else{
-            errorOrgane.setText("Veuillez renseigner le nom d'un tissu");
-        }
+            BDD.addStage(main.tools.spaceToUnderscore(ajoutStageBouton.getText().toUpperCase()));
+            main.tools.switchScene((Stage) ajoutStageBouton.getScene().getWindow(), "Modules/Stages/Stage.fxml", main.getStageController());
+            main.getStageController();
     }
 
 
