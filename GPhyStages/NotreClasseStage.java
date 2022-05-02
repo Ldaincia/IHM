@@ -14,18 +14,16 @@ public class NotreClasseStage {
     private final IntegerProperty num_offre;
     private final StringProperty  nom_structure;
     private final StringProperty  sujet;
-    private final StringProperty  intitule;
     private final StringProperty  lieu;
     private final IntegerProperty duree;
     private final StringProperty  mois_debut;
     private final StringProperty  promotion_etu;
 
 
-    public NotreClasseStage(Main newMain, int num_offre, String nom_structure, String sujet, String intitule, String lieu, int duree, String mois_debut, String promotion_etu){
+    public NotreClasseStage(int num_offre, String nom_structure, String sujet, String lieu, int duree, String mois_debut, String promotion_etu){
         this.num_offre = new SimpleIntegerProperty(num_offre);
         this.nom_structure = new SimpleStringProperty(nom_structure);
         this.sujet = new SimpleStringProperty(sujet);
-        this.intitule = new SimpleStringProperty(intitule);
         this.lieu = new SimpleStringProperty(lieu);
         this.duree = new SimpleIntegerProperty(duree);
         this.mois_debut = new SimpleStringProperty(mois_debut);
@@ -49,12 +47,6 @@ public class NotreClasseStage {
     }
     public void setSujet(String sujet){this.sujet.set(sujet);}
     public StringProperty sujetProperty(){return sujet;}
-
-    public String getIntitule(){
-        return intitule.get();
-    }
-    public void setIntitule(String intitule){this.intitule.set(intitule);}
-    public StringProperty intutileProperty(){return intitule;}
 
     public String getLieu() {
         return lieu.get();

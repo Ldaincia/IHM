@@ -4,6 +4,7 @@ import javafx.collections.ObservableList;
 
 import java.sql.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -62,7 +63,7 @@ public class BDD {
                 new Object[]{nom,sub,intitu,adresse,dur,mois,promo},
                 new int[]{Types.VARCHAR, Types.VARCHAR,Types.VARCHAR,Types.VARCHAR,Types.INTEGER,Types.VARCHAR,Types.VARCHAR});
         //update cache
-        stages.add(new NotreClasseStage(new Main(), id,nom,sub,intitu,adresse,dur,mois,promo));
+        stages.add(new NotreClasseStage(id,nom,sub,adresse,dur,mois,promo));
     }
 
     /**
@@ -130,7 +131,7 @@ public class BDD {
         int rows = (int) CRUDHelper.update(
                 "Stage",
                 new String[]{"nom_structure","sujet","intitule","lieu","duree","mois_debut","promotion_etu"},
-                new Object[]{newStage.getNom_structure(),newStage.getSujet(),newStage.getIntitule(),newStage.getLieu(),
+                new Object[]{newStage.getNom_structure(),newStage.getSujet(),newStage.getLieu(),
                         newStage.getDuree(),newStage.getMois_debut(),newStage.getPromotion_etu()},
                 new int[]{Types.VARCHAR, Types.VARCHAR,Types.VARCHAR, Types.VARCHAR,Types.INTEGER,Types.VARCHAR, Types.VARCHAR},
                 "num_offre",
@@ -155,21 +156,21 @@ public class BDD {
 
     /**
      * selection des stages (toutes les lignes)
-     * @param stages
+     * @return laListe
      */
 
-    public static void selectionBDD(ObservableList<NotreClasseStage> stages) {
+    public static ArrayList<NotreClasseStage> selectionBDD() {
+        ArrayList<NotreClasseStage> laListe = new ArrayList<>();
         String query = "SELECT * FROM " + tableName;
         try (Connection connection = connect(location)) {
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet rs = statement.executeQuery();
-            stages.clear();
+
             while (rs.next()) {
-                stages.add(new NotreClasseStage( new Main(),
+                laListe.add(new NotreClasseStage(
                         rs.getInt("num_offre"),
                         rs.getString("nom_structure"),
                         rs.getString("sujet"),
-                        rs.getString("intitule"),
                         rs.getString("lieu"),
                         rs.getInt("duree"),
                         rs.getString("mois_debut"),
@@ -179,8 +180,8 @@ public class BDD {
             Logger.getAnonymousLogger().log(
                     Level.SEVERE,
                     LocalDateTime.now() + ": Could not load Persons from database ");
-            stages.clear();
         }
+        return laListe;
     }
 
     /**

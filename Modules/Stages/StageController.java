@@ -82,6 +82,7 @@ public class StageController implements Initializable {
     }
 */
 
+    /*
     @FXML
     public void viewStage() {
         try (Connection connection = connect(BDD.getLocation())) {
@@ -95,6 +96,14 @@ public class StageController implements Initializable {
             connection.close();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+*/
+
+
+    public void loadList (){
+        for (NotreClasseStage item : BDD.selectionBDD()){
+            tableStage.getItems().add(item);
         }
     }
 
@@ -128,7 +137,7 @@ public class StageController implements Initializable {
 
     public void goToNosInfos(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Stages/Stage.fxml", main.getStageController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "../Modules/NosInfos/NosInfos.fxml", main.getInfosController());
     }
 
 

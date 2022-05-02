@@ -25,7 +25,7 @@
       </Label>
       <Pane layoutX="15.0" layoutY="127.0" prefHeight="37.0" prefWidth="851.0" style="-fx-background-color: #BD658A; -fx-border-color: #201E1F;">
          <children>
-            <Button layoutX="155.0" layoutY="-11.0" mnemonicParsing="false" onAction="#goToStage" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Accueil">
+            <Button layoutX="155.0" layoutY="-11.0" mnemonicParsing="false" onAction="#goAccueil" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Accueil">
                <font>
                   <Font name="Verdana Bold" size="18.0" />
                </font>

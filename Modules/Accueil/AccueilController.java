@@ -38,10 +38,11 @@ public class AccueilController {
     public void goToStage(ActionEvent e) throws IOException {
         Button NosStages = (Button) e.getSource();
         main.tools.switchScene((Stage) NosStages.getScene().getWindow(), "../Modules/Stages/Stage.fxml", main.getStageController());
+        main.getStageController().loadList();
     }
 
     public void goToNosInfos(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "NosInfos/NosInfos.fxml", main.getInfosController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "../Modules/NosInfos/NosInfos.fxml", main.getInfosController());
     }
 }

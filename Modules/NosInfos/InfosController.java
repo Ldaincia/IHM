@@ -20,12 +20,13 @@ public class InfosController {
 
     public void goAccueil(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Accueil/Accueil.fxml", main.getAccueilController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "../Modules/Accueil/Accueil.fxml", main.getAccueilController());
     }
 
     public void goToStage(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "NosInfos/NosInfos.fxml", main.getInfosController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "../Modules/Stages/Stage.fxml", main.getStageController());
+        main.getStageController().loadList();
     }
 
 
