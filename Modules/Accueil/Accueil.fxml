@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="597.0" prefWidth="889.0" style="-fx-background-color: #BD658A; -fx-border-color: #201E1F;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="597.0" prefWidth="889.0" style="-fx-background-color: #BD658A; -fx-border-color: #201E1F;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <SubScene height="563.0" layoutX="19.0" layoutY="16.0" style="-fx-effect: #201E1F;" width="851.0">
         <root>
@@ -40,7 +40,7 @@
       <Label alignment="TOP_CENTER" layoutX="242.0" layoutY="345.0" prefHeight="176.0" prefWidth="452.0" text="Bonjour à tous" />
       <ImageView fitHeight="79.0" fitWidth="115.0" layoutX="741.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../IMAGES/LogoGphy.png" />
+            <Image url="@IMAGES/LogoGphy.png" />
          </image>
       </ImageView>
    </children>

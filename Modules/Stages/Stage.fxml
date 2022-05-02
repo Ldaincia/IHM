@@ -32,7 +32,7 @@
          <children>
             <Button layoutX="161.0" layoutY="-12.0" mnemonicParsing="false" onAction="#goAccueil" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Accueil">
                <font>
-                  <Font name="Verdana Bold" size="18.0" />
+                  <Font size="18.0" />
                </font>
             </Button>
             <Button layoutX="475.0" layoutY="-13.0" mnemonicParsing="false" onAction="#goToNosInfos" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Nos informations">
@@ -69,7 +69,7 @@
                   <ButtonBar layoutX="66.0" layoutY="290.0" prefHeight="40.0" prefWidth="284.0">
                     <buttons>
                         <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="142.0" text="MODIFIER OFFRE" />
-                        <Button mnemonicParsing="false" onAction="#deleteStage" prefHeight="28.0" prefWidth="142.0" text="SUPPRIMER OFFRE" />
+                        <Button mnemonicParsing="false" onAction="#DeleteButton" prefHeight="28.0" prefWidth="142.0" text="SUPPRIMER OFFRE" />
                     </buttons>
                   </ButtonBar>
                   <GridPane layoutX="14.0" layoutY="14.0" prefHeight="226.0" prefWidth="388.0">

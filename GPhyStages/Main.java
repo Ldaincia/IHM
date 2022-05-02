@@ -53,9 +53,9 @@ public class Main extends Application {
 
     public void initRootLayout(){
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../Modules/Accueil/Accueil.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Modules/Accueil/Accueil.fxml"));
             loader.setController(this.accueilController);
-            rootLayout = (Parent) loader.load();
+            rootLayout = loader.load();
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
