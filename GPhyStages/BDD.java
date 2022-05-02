@@ -2,6 +2,8 @@ package GPhyStages;
 
 import javafx.collections.ObservableList;
 
+import java.io.File;
+import java.net.URISyntaxException;
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -12,7 +14,17 @@ import java.util.logging.Logger;
 public class BDD {
 
     //string contenant le lien vers la BDD
-    private static final String location = BDD.class.getResource("database.db").toExternalForm();
+    //private static final String location = BDD.class.getResource("database.db").toExternalForm();
+    private static String location = null;
+
+    static {
+        try {
+            location = new File(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getPath() + "\\database.db";
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+    };
+
     private static final String tableName = "offre_stage";
 
     public static String getLocation() {

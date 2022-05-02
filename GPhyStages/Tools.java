@@ -18,7 +18,7 @@ public class Tools {
         }
 
         public void switchScene(Stage stage, String nameFXML, Object controller) throws IOException {
-            FXMLLoader newFXML = new FXMLLoader(getClass().getResource("/Modules/" + nameFXML));
+            FXMLLoader newFXML = new FXMLLoader(getClass().getResource(nameFXML));
             newFXML.setController(controller);
             Parent pane = (Parent) newFXML.load();
             previousScene = stage.getScene();
