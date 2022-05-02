@@ -69,25 +69,6 @@ public class StageController implements Initializable {
 
     public StageController(){}
 
-    /*
-    @FXML
-    public void viewStage() {
-        try (Connection connection = connect(BDD.getLocation())) {
-            String sql = "SELECT * FROM mesStages";
-            PreparedStatement stat = connection.prepareStatement(sql);
-            ResultSet rs = stat.executeQuery();
-            data.clear();
-            while (rs.next()) {
-                data.add(new StageModel(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6)));
-            }
-            connection.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-*/
-
-
     public void loadList (){
         for (NotreClasseStage item : BDD.selectionBDD()){
             tableStage.getItems().add(item);

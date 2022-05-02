@@ -37,7 +37,7 @@
             </Button>
             <Button layoutX="475.0" layoutY="-13.0" mnemonicParsing="false" onAction="#goToNosInfos" prefHeight="59.0" prefWidth="190.0" style="-fx-border-color: #201E1F;" text="Nos informations">
                <font>
-                  <Font name="Baskerville Old Face" size="18.0" />
+                  <Font size="18.0" />
                </font>
             </Button>
          </children>
@@ -92,12 +92,12 @@
                         <Label text="Durée :" GridPane.rowIndex="3" />
                         <Label text="Début :" GridPane.rowIndex="4" />
                         <Label text="Promotion :" GridPane.rowIndex="5" />
-                        <Label fx:id="nom_structureLabel" text="Label" GridPane.columnIndex="1" />
-                        <Label fx:id="sujetLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label fx:id="lieuLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label fx:id="dureeLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label fx:id="mois_debutLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label fx:id="promotion_etuLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="nom_structureLabel" text="........" GridPane.columnIndex="1" />
+                        <Label fx:id="sujetLabel" text="........" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="lieuLabel" text="........" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="dureeLabel" text="........" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="mois_debutLabel" text="........" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="promotion_etuLabel" text="........" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
                </children>

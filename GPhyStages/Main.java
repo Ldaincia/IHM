@@ -34,12 +34,6 @@ public class Main extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle(" TITRE FENETRE ");
         initRootLayout();
-        //showStageOverview();
-        /*
-        primaryStage.setOnCloseRequest(e -> Platform.exit());
-        primaryStage.setScene(new Scene(new Label(" HELLO WORLD "), 1280, 720));
-        primaryStage.show();
-        */
     }
 
     public void init() {
