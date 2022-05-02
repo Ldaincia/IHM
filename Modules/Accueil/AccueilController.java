@@ -37,13 +37,7 @@ public class AccueilController {
 
     public void goToStage(ActionEvent e) throws IOException {
         Button NosStages = (Button) e.getSource();
-        root = FXMLLoader.load(getClass().getResource("Stages/Stage.fxml"));
-        stage = (Stage)((javafx.scene.Node)e.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
-        //main.tools.switchScene((Stage) NosStages.getScene().getWindow(), "Stages/Stage.fxml", main.getStageController());
+        main.tools.switchScene((Stage) NosStages.getScene().getWindow(), "../Modules/Stages/Stage.fxml", main.getStageController());
     }
 
     public void goToNosInfos(ActionEvent e) throws IOException {

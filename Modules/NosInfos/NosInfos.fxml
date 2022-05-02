@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="610.0" prefWidth="887.0" style="-fx-background-color: #BD658A; -fx-border-color: #201E1F;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modules.Stages.Stage">
+<AnchorPane prefHeight="610.0" prefWidth="887.0" style="-fx-background-color: #BD658A; -fx-border-color: #201E1F;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <SubScene height="563.0" layoutX="15.0" layoutY="26.0" style="-fx-effect: #201E1F; -fx-scale-y: #201E1F; -fx-blend-mode: #201E1F;" width="851.0">
          <root>
