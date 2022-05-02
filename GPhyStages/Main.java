@@ -47,6 +47,7 @@ public class Main extends Application {
         nouveauStageController = new NouveauStageController(this);
         accueilController = new AccueilController(this);
         infosController = new InfosController(this);
+        this.tools = new Tools(this);
     }
 
 

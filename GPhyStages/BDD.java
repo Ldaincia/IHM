@@ -100,16 +100,22 @@ public class BDD {
         }
     }
 
-    public static void addStage(int id2)
+    public static void addStage(String nom_structure, String sujet, String lieu, int duree, String mois_debut, String promotion_etu)
     {
-        String query = "ADD FROM NotreClasseStage WHERE id2 = ?";
+
+
+        String query = " INSERT INTO offre_stage VALUES (NULL, ?, ?, ?, ?, ?, ?, ?) ";
         try (Connection connection = connect(location))
         {
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.setInt(1,id2);
+            statement.setString(1, nom_structure);
+            statement.setString(2, sujet);
+            statement.setString(3, lieu);
+            statement.setInt(4, duree);
+            statement.setString(5, mois_debut);
+            statement.setString(6, promotion_etu);
             statement.execute();
         }
-
         catch (Exception e)
         {
             System.out.println(e);

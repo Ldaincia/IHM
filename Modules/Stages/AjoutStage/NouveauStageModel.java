@@ -55,10 +55,8 @@ public class NouveauStageModel {
 
     private Main main;
 
-    public void ajoutNouveauStage(TextField laStructure, TextField leSujet, TextField leLieu, Integer laDuree, TextField leDebut, TextField laPromo, Button ajoutStageBouton)throws IOException {
-        if (!ajoutStageBouton.getText().isEmpty()) {
-            BDD.addStage(main.tools.spaceToUnderscore(ajoutStageBouton.getText().toUpperCase()));
-            main.tools.switchScene((Stage) ajoutStageBouton.getScene().getWindow(), "Modules/Stages/Stage.fxml", main.getStageController());
+    public void ajoutNouveauStage(TextField laStructure, TextField leSujet, TextField leLieu, TextField laDuree, TextField leDebut, TextField laPromo)throws IOException {
+            BDD.addStage(laStructure.getText(), leSujet.getText(), leLieu.getText(), Integer.parseInt(laDuree.getText()), leDebut.getText(), laPromo.getText());
             main.getStageController();
     }
 

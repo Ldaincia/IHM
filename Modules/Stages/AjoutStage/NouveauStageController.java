@@ -49,4 +49,8 @@ public class NouveauStageController {
         }
     }
 
+    //main.tools.switchScene((Stage) ajoutStageBouton.getScene().getWindow(), "Modules/Stages/Stage.fxml", main.getStageController());
+
+
+
 }

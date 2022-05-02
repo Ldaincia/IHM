@@ -13,8 +13,6 @@ import javafx.scene.layout.AnchorPane;
 
 import GPhyStages.Main;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -41,6 +39,7 @@ public class StageController implements Initializable {
     private String sujetColonne;
 
     public ObservableList<StageModel> data = FXCollections.observableArrayList();
+
     @FXML
     private String lieuColonne;
     @FXML
@@ -54,8 +53,7 @@ public class StageController implements Initializable {
     private Label nom_structureLabel;
     @FXML
     private Label sujetLabel;
-    @FXML
-    private Label intituleLabel;
+
     @FXML
     private Label lieuLabel;
     @FXML
@@ -66,19 +64,6 @@ public class StageController implements Initializable {
     private Label promotion_etuLabel;
 
     private Main main;
-
-    public StageController(String nom_structureColonne, String sujetColonne, String lieuColonne, int dureeColonne, String mois_debutColonne, String promotion_etuColonne) {
-
-        this.nom_structureColonne = nom_structureColonne;
-        this.sujetColonne = sujetColonne;
-        this.lieuColonne = lieuColonne;
-        this.dureeColonne = dureeColonne;
-        this.mois_debutColonne = mois_debutColonne;
-        this.promotion_etuColonne = promotion_etuColonne;
-
-    }
-
-    ;
 
     @FXML
     public void viewStage() {
@@ -94,17 +79,18 @@ public class StageController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    @FXML
-    private void initialize() {
-        nom_structureColonne.setCellValueFactory(cellData -> cellData.getValue().nom_structureProperty());
+        nom_structureColonne.setCellValueFactory(new PropertyValueFactory<NotreClasseStage, String>("nom_structure"));
         sujetColonne.setCellValueFactory(cellData -> cellData.getValue().sujetProperty());
         lieuColonne.setCellValueFactory(cellData -> cellData.getValue().lieuProperty());
         dureeColonne.setCellValueFactory(cellData -> cellData.getValue().dureeProperty().asObject());
         mois_debutColonne.setCellValueFactory(cellData -> cellData.getValue().mois_debutProperty());
         promotion_etuColonne.setCellValueFactory(cellData -> cellData.getValue().promotion_etuProperty());
     }
+
+    @FXML
+    private void initialize() {
+    }
+
 
     public void setMain(Main main) {
         this.main = main;
@@ -113,7 +99,6 @@ public class StageController implements Initializable {
 
     @FXML
     private Button home;
-
 
     public StageController(Main newMain) {
         main = newMain;
@@ -129,12 +114,10 @@ public class StageController implements Initializable {
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Stages/Stage.fxml", main.getStageController());
     }
 
-
     public void goToAjout(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Stages/AjoutStage/NouveauStage.fxml", main.getNouveauStageController());
     }
-
 
     public void deleteStage(NotreClasseStage leStage, TableView laColonne) {
         BDD.deleteStage(leStage.getId());
@@ -143,6 +126,5 @@ public class StageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
 }
