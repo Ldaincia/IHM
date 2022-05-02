@@ -70,19 +70,6 @@ public class StageController implements Initializable {
     public StageController(){}
 
     /*
-    public StageController(String nom_structureColonne, String sujetColonne, String lieuColonne, int dureeColonne, String mois_debutColonne, String promotion_etuColonne) {
-
-        this.nom_structureColonne = nom_structureColonne;
-        this.sujetColonne = sujetColonne;
-        this.lieuColonne = lieuColonne;
-        this.dureeColonne = dureeColonne;
-        this.mois_debutColonne = mois_debutColonne;
-        this.promotion_etuColonne = promotion_etuColonne;
-
-    }
-*/
-
-    /*
     @FXML
     public void viewStage() {
         try (Connection connection = connect(BDD.getLocation())) {
@@ -105,16 +92,17 @@ public class StageController implements Initializable {
         for (NotreClasseStage item : BDD.selectionBDD()){
             tableStage.getItems().add(item);
         }
+        initialize();
     }
 
     @FXML
     private void initialize() {
-        nom_structureColonne.setCellValueFactory(cellData -> cellData.getValue().nom_structureProperty());
-        sujetColonne.setCellValueFactory(cellData -> cellData.getValue().sujetProperty());
-        lieuColonne.setCellValueFactory(cellData -> cellData.getValue().lieuProperty());
-        dureeColonne.setCellValueFactory(cellData -> cellData.getValue().dureeProperty().asObject());
-        mois_debutColonne.setCellValueFactory(cellData -> cellData.getValue().mois_debutProperty());
-        promotion_etuColonne.setCellValueFactory(cellData -> cellData.getValue().promotion_etuProperty());
+        nom_structureColonne.setCellValueFactory(new PropertyValueFactory<NotreClasseStage, String>("nom_structure"));
+        sujetColonne.setCellValueFactory(new PropertyValueFactory<NotreClasseStage, String>("sujet"));
+        lieuColonne.setCellValueFactory(new PropertyValueFactory<NotreClasseStage, String>("lieu"));
+        dureeColonne.setCellValueFactory(new PropertyValueFactory<NotreClasseStage, Integer>("duree"));
+        mois_debutColonne.setCellValueFactory(new PropertyValueFactory<NotreClasseStage, String>("mois_debut"));
+        promotion_etuColonne.setCellValueFactory(new PropertyValueFactory<NotreClasseStage, String>("promotion_etu"));
     }
 
     public void setMain(Main main) {
@@ -140,12 +128,10 @@ public class StageController implements Initializable {
         main.tools.switchScene((Stage) button.getScene().getWindow(), "../Modules/NosInfos/NosInfos.fxml", main.getInfosController());
     }
 
-
     public void goToAjout(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Stages/AjoutStage/NouveauStage.fxml", main.getNouveauStageController());
     }
-
 
     public void deleteStage() {
         NotreClasseStage leStage = tableStage.getSelectionModel().getSelectedItem();

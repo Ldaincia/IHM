@@ -104,7 +104,6 @@ public class BDD {
     public static void addStage(String nom_structure, String sujet, String lieu, int duree, String mois_debut, String promotion_etu)
     {
 
-
         String query = " INSERT INTO offre_stage VALUES (NULL, ?, ?, ?, ?, ?, ?, ?) ";
         try (Connection connection = connect(location))
         {
